@@ -1,0 +1,24 @@
+while True:
+  number1 = int(input())
+  simbol = input()
+  if simbol == '0':
+    break
+  number2 = int(input())
+  if simbol == '+':
+    answer = number1 + number2
+    print('Ответ', answer)
+  elif simbol == '-':
+    answer = number1 - number2
+    print('Ответ', answer)
+  elif simbol == '*':
+    answer = number1 * number2
+    print('Ответ', answer)
+  elif simbol == '/' and number2 == 0:
+    print('На 0 невозможно делить')
+  elif simbol == '/':
+    answer = number1 / number2
+    print('Ответ', answer)
+  else:
+    print('Ошибка!')
+  print('Если хотите остановить напишите 0 на  место знака')
+print('Спасибо что воспользовались нашими услугами!')
