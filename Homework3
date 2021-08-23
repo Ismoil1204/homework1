@@ -1,0 +1,30 @@
+print('Укажите свой пол\n1:Мужшина\n2:Женшина')
+sex1 = input()
+sex = sex1.lower()
+if sex == 'женшина':
+  print('Чтобы я вам помог введите Ваш возраст')
+  age = int(input())
+  if age >= 18:
+    print('Введите меня два числа и математический знак чтобы я вам помог их решить')
+    while True:
+      number1 = int(input())
+      simbol = input()
+      if simbol == 'STOP':
+        break
+      number2 = int(input())
+      if simbol == '+':
+        answer = number1 + number2
+        print('Ответ', answer)
+      elif simbol == '-':
+        answer = number1 - number2
+        print('Ответ', answer)
+      elif simbol == '*':
+        answer = number1 * number2
+        print('Ответ', answer)
+      elif simbol == '/':
+        answer = number1 / number2
+        print('Ответ', answer)
+      print('Если хотите остановить напишите STOP на  место знака')
+print('Bye')
+
+# я не посматривал код на видеоуроки
