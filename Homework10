@@ -1,0 +1,31 @@
+print('Здравствуйте пожалуйста введите своё имя!')
+name = input()
+print('Приветь {}'.format(name))
+print('Вы хотите ли ввести нам своё телефонный номер?\n1: Да\n2: Нет')
+question1 = input()
+question = question1.lower()
+if question == 'Да' or question == '1' :
+  print('Отлично! Тогда введите нам свой телефонный номер')
+  telephone = input()
+  if telephone[1:4] == '998':
+    uzb_oper_code = ['91', '90', '93', '97', '33']
+    if telephone[4:6] in uzb_oper_code:
+      print('Супер! Номер введён верно')
+  else:
+    print('Ошибка введите номер заново')
+elif question == 'Нет' or question == '2' :
+  print('Если вы видёте нам свой телефон номер у вас будет шанс выиграть офигенную машину')
+  print('Тепер хотите ли ввести нам своё телефонный номер?\n1: Да\n2: Нет')
+  question1 = input()
+  question = question1.lower()
+  if question == 'Да' or question == '1' :
+    print('Ого вы передумали теперь введите нам свой телефонный номер')
+    telephone = input()
+    if telephone[1:4] == '998':
+      uzb_oper_code = ['91', '90', '93', '97', '33']
+      if telephone[4:6] in uzb_oper_code:
+        print('Супер! Номер введён верно')
+    else:
+      print('Ошибка введите номер заново')
+  elif question == 'Нет' or question == '2' :
+    print('Вас невозможно уговаривать желаю вам успехов и удачи в жизни!')
