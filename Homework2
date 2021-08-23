@@ -1,0 +1,9 @@
+a = int(input())
+b = int(input())
+c = int(input())
+if a>b and a>c:
+  print('самое большое число {}'.format(a))
+elif b>a and b>c:
+  print('самое большое число {}'.format(b))
+elif c>a and c>b:
+  print('самое большое число {}'.format(c))
