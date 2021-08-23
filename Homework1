@@ -1,0 +1,10 @@
+number = int(input())
+number2 = int(input())
+number3 = int(input())
+
+if number2>number>number3 or number3>number>number2:
+  print('{} по серидине'.format(number))
+elif number>number2>number3 or number3>number2>number:
+  print('{} по серидине'.format(number2))
+else:
+  print('{} по серидине'.format(number3))
