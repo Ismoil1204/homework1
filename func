@@ -1,0 +1,22 @@
+def start(update, context):
+    user_id = update.message.chat_id
+    name = update.message.from_user.first_name
+    context.bot.send_message(chat_id=user_id,text='Привет {}\nТвой Telegram_ID: {}'.format(name,user_id))
+def youtube(update, context):
+    user_id = update.message.chat_id
+    context.bot.send_message(text='Вот вам ссылка на YouTube\nhttps://www.youtube.com/', chat_id = user_id)
+def tehnikum(update, context):
+    user_id = update.message.chat_id
+    context.bot.send_message(text='Cведения о техникуме! \n\nTEHNIKUM SCHOOL ШКОЛА АКТУАЛЬНЫХ ПРОФЕССИЙ В УЗБЕКИСТАНЕ| Курсы, обучение SMM, Таргетинг, Графический дизайн, Контекстная реклама, SEO в Ташкенте', chat_id = user_id)
+def text_answer(update,context):
+    user_id = update.message.chat_id
+    text = update.message.text
+    context.bot.send_message(text=text, chat_id = user_id)
+def voice_answer(update,context):
+    user_id = update.message.chat_id
+    voice = update.message.voice
+    context.bot.send_message(text='Простите я не умею слышать',chat_id = user_id)
+def photo_answer(update, context):
+    user_id = update.message.chat_id
+    photo = update.message.photo
+    context.bot.send_message(text='Чёткая фото', chat_id = user_id)
