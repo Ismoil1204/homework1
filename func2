@@ -1,0 +1,42 @@
+from telegram import KeyboardButton, ReplyKeyboardMarkup, InlineKeyboardButton, InlineKeyboardMarkup
+
+def start(update, context):
+    user_id = update.message.chat_id
+    name = update.message.from_user.first_name
+    a = [InlineKeyboardButton(text='RU🇷🇺', callback_data='russian_version'),
+         InlineKeyboardButton(text='UZ🇺🇿', callback_data='uzbek_version')]
+    context.bot.send_message(chat_id = user_id, text='Выберите язык', reply_markup=InlineKeyboardMarkup([a]))
+def uzbek_version(update, context):
+    user_id = update.callback_query.from_user.id
+    name = update.callback_query.from_user.first_name
+    x = [InlineKeyboardButton(text='Ishga ariza', callback_data='qabul_uz'),
+         InlineKeyboardButton(text='Faqat suhbatlashmoqchiman', callback_data='idi_uz')]
+    context.bot.send_message(chat_id = user_id, text='Salom {} Men sizga qanday yordam bera olaman 🤗'.format(name), reply_markup=InlineKeyboardMarkup([x]))
+def russian_version(update, context):
+    user_id = update.callback_query.from_user.id
+    name = update.callback_query.from_user.first_name
+    x = [InlineKeyboardButton(text='Заявка на работу', callback_data='qabul_ru'),
+         InlineKeyboardButton(text='Просто хочу поболтать', callback_data='idi_ru')]
+    context.bot.send_message(chat_id=user_id, text='Здравствуйте {} чем я вам могу помочь 🤗'.format(name), reply_markup=InlineKeyboardMarkup([x]))
+def idi_ru(update, context):
+    user_id = update.callback_query.from_user.id
+    context.bot.send_message(chat_id=user_id, text='Тогда идите поболтать другим Ботом 😝')
+def idi_uz(update, context):
+    user_id = update.callback_query.from_user.id
+    context.bot.send_message(chat_id=user_id, text='Unda boshqa bot bilan suhbatlashing 😝')
+def qabul_ru(update, context):
+    user_id = update.callback_query.from_user.id
+    context.bot.send_message(chat_id=user_id, text='Замечательно🥳\nЧтобы работать с нами мы должны знать о вас')
+    c = [InlineKeyboardButton(text='Работник👨‍💼', callback_data='worker'),
+         InlineKeyboardButton(text='Повар👨‍🍳', callback_data='cook'),
+         InlineKeyboardButton(text='Охрана👮‍♂️', callback_data='security'),
+         InlineKeyboardButton(text='Cекретар👨‍💻', callback_data='secretar')]
+    context.bot.send_message(chat_id = user_id, text='Какой направление хочете выбрать', reply_markup=InlineKeyboardMarkup([c]))
+def qabul_uz(update, context):
+    user_id = update.callback_query.from_user.id
+    context.bot.send_message(chat_id=user_id, text='Zo\'r🥳\nBiz bilan ishlash uchun biz siz haqizda bilishimiz lozim')
+    c = [InlineKeyboardButton(text='Ishchi👨‍💼', callback_data='worker'),
+         InlineKeyboardButton(text='Oshpaz👨‍🍳', callback_data='cook'),
+         InlineKeyboardButton(text='Qorovul👮‍♂️', callback_data='security'),
+         InlineKeyboardButton(text='Sekretar👨‍💻', callback_data='secretar')]
+    context.bot.send_message(chat_id=user_id, text='Qaysi yo\'nalishni tanlaysiz', reply_markup=InlineKeyboardMarkup([c]))
